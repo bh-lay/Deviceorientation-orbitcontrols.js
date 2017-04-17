@@ -784,6 +784,7 @@ THREE.OrbitControls = function ( object, domElement ) {
         scope.dispatchEvent( endEvent );
         
         state = STATE.NONE;
+        scope.dampingEnded = true;
         
     }
     
