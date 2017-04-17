@@ -510,10 +510,10 @@ THREE.OrbitControls = function ( object, domElement ) {
         var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
 
         // rotating across whole screen goes 360 degrees around
-        rotateLeft( 2 * Math.PI * rotateDelta.x / element.clientWidth * (scope.rotateSpeed * scope.dampingFactor));
+        rotateLeft( -Math.PI * rotateDelta.x / element.clientWidth * (scope.rotateSpeed * scope.dampingFactor));
 
         // rotating up and down along whole screen attempts to go 360, but limited to 180
-        rotateUp( Math.PI * rotateDelta.y / element.clientHeight * (scope.rotateSpeed * scope.dampingFactor) );
+        rotateUp( -0.5*Math.PI * rotateDelta.y / element.clientHeight * (scope.rotateSpeed * scope.dampingFactor) );
 
         rotateStart.copy( rotateEnd );
 
